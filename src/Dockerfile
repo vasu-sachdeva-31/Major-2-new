@@ -1,5 +1,6 @@
 FROM python:3-slim-buster
 WORKDIR /usr/src/app
+COPY . .
 COPY requirements.txt ./
 RUN pip install -r requirements.txt
 
@@ -14,11 +15,3 @@ RUN python manage.py migrate app
 
 # Start Django server
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
-
-# FROM python:3-slim-buster
-# WORKDIR /usr/src/app
-# COPY requirements.txt ./
-# RUN pip install -r requirements.txt
-# COPY . .
-# RUN chmod +x entry_point.sh
-# CMD [ "./entry_point.sh" ]
