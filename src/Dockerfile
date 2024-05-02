@@ -1,7 +1,7 @@
 FROM python:3-slim-buster
 WORKDIR /usr/src/app
 COPY requirements.txt ./
-COPY docker-entrypoint.sh /usr/local/bin/
+COPY entry_point.sh /usr/local/bin/
 RUN pip install -r requirements.txt
 COPY . .
 RUN chmod +x entry_point.sh
