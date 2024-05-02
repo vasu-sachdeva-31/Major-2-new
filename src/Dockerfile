@@ -5,4 +5,4 @@ COPY entry_point.sh /usr/local/bin/
 RUN pip install -r requirements.txt
 COPY . .
 RUN chmod +x entry_point.sh
-CMD [ "./entry_point.sh" ]
+CMD [ "dos2unix ./entry_point.sh" ]
